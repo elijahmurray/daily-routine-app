@@ -15,6 +15,10 @@ group :production do
   gem 'heroku-deflater'
 end
 
+group :development do
+  gem 'guard-livereload'
+end
+
 group :development, :test do
   gem 'better_errors'
   gem 'binding_of_caller'
