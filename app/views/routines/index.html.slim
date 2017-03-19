@@ -1,0 +1,12 @@
+h1 All Routines
+
+table.table
+  thead
+    tr
+      th name
+      th frequency
+  tbody
+  - @routines.each do |r|
+    tr 
+      td = r.name 
+      td = r.frequency

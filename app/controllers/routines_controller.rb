@@ -1,4 +1,8 @@
 class RoutinesController < ApplicationController
+  def index
+    @routines = Routine.all
+  end
+
   def new
     @routine = Routine.new
   end
