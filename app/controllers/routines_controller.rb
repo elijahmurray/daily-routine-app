@@ -6,6 +6,13 @@ class RoutinesController < ApplicationController
   def new
     @routine = Routine.new
   end
+
+  def destroy
+    @routine = Routine.find(params[:id])
+    @routine.delete
+
+    redirect_to routines_path
+  end
   
   def create
     @routine = Routine.new(routine_params)

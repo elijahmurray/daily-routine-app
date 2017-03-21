@@ -1,5 +1,7 @@
 h1 All Routines
 
+= link_to "Create New", new_routine_path, class: "btn btn-primary"
+
 table.table
   thead
     tr
@@ -8,5 +10,5 @@ table.table
   tbody
   - @routines.each do |r|
     tr 
-      td = r.name 
+      td = link_to r.name, r
       td = r.frequency

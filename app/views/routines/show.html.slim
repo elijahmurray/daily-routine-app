@@ -2,4 +2,7 @@ h1 Show
 p = @routine.name
 p = @routine.frequency
 
-.btn.btn-link = link_to "See All Routines", routines_path
+b Actions
+br
+= link_to "View All", routines_path, class: "btn btn-secondary"
+= link_to "Delete", routine_path(@routine), method: :delete, class: "btn btn-danger"
