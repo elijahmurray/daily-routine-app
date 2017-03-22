@@ -1,5 +1,9 @@
 == README
 
+To Do
+- Add validation feedback on save or fail to save.
+- Add inline validation.:w
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 

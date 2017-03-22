@@ -3,6 +3,19 @@ class RoutinesController < ApplicationController
     @routines = Routine.all
   end
 
+  def edit
+    @routine = Routine.find(params[:id])
+  end
+
+  def update
+    @routine = Routine.find(params[:id])
+    if @routine.update(routine_params)
+      redirect_to @routine
+    else
+      render "edit"
+    end
+  end
+
   def new
     @routine = Routine.new
   end

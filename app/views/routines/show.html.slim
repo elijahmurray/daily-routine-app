@@ -5,4 +5,5 @@ p = @routine.frequency
 b Actions
 br
 = link_to "View All", routines_path, class: "btn btn-secondary"
+= link_to "Edit", edit_routine_path(@routine),  class: "btn btn-secondary"
 = link_to "Delete", routine_path(@routine), method: :delete, class: "btn btn-danger"

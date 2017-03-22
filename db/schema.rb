@@ -11,7 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170319194503) do
+ActiveRecord::Schema.define(version: 20170322190650) do
+
+  create_table "routine_items", force: :cascade do |t|
+    t.string   "type"
+    t.boolean  "complete"
+    t.string   "detail"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "routines", force: :cascade do |t|
     t.string   "name"
