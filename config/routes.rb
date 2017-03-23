@@ -1,10 +1,16 @@
 Rails.application.routes.draw do
+  get 'routine_tasks/new'
+
+  get 'routines/new'
+
   devise_for :users
   get 'pages/home'
 
   root 'pages#home'
 
-  resources :routines
+  resources :routines do
+    resources :routine_tasks
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

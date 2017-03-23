@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170322190650) do
+ActiveRecord::Schema.define(version: 20170323025427) do
 
   create_table "routine_items", force: :cascade do |t|
     t.string   "type"
@@ -20,6 +20,17 @@ ActiveRecord::Schema.define(version: 20170322190650) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "routine_tasks", force: :cascade do |t|
+    t.string   "task_type"
+    t.boolean  "complete"
+    t.string   "detail"
+    t.integer  "routine_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "routine_tasks", ["routine_id"], name: "index_routine_tasks_on_routine_id"
 
   create_table "routines", force: :cascade do |t|
     t.string   "name"

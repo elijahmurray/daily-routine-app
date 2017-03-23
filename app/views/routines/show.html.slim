@@ -2,6 +2,15 @@ h1 Show
 p = @routine.name
 p = @routine.frequency
 
+br
+= link_to "New Routine Task", new_routine_routine_task_path(@routine)
+br
+ul
+  - @routine.routine_tasks.each do |rt|
+    li 
+      = rt.detail
+      = link_to "delete", routine_routine_task_path(@routine, rt), method: :delete
+
 b Actions
 br
 = link_to "View All", routines_path, class: "btn btn-secondary"
