@@ -7,8 +7,10 @@ br
 br
 ul
   - @routine.routine_tasks.each do |rt|
-    li 
-      = rt.detail
+    li.clearfix
+      = render partial: 'routine_tasks/checkbox_form', locals: {routine_task: rt}
+      = rt.detail 
+      = " | "
       = link_to "delete", routine_routine_task_path(@routine, rt), method: :delete
 
 b Actions
