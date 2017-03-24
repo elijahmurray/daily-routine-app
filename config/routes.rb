@@ -9,7 +9,11 @@ Rails.application.routes.draw do
   root 'pages#home'
 
   resources :routines do
-    resources :routine_tasks
+    resources :routine_tasks do
+      member do
+        put 'complete'
+      end
+    end
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

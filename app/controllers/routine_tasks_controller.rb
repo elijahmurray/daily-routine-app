@@ -15,6 +15,13 @@ class RoutineTasksController < ApplicationController
     end
   end
 
+  def complete
+    @routine_task = RoutineTask.find(params[:id])
+    @routine_task.update(complete: !@routine_task.complete)
+
+    redirect_to routine_path(@routine_task.routine)
+  end
+
   def edit
     @routine_task = RoutineTask.find(params[:id])
     @routine = @routine_task.routine

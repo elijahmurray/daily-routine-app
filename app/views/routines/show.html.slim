@@ -11,6 +11,8 @@ ul
       = render partial: 'routine_tasks/checkbox_form', locals: {routine_task: rt}
       = rt.detail 
       = " | "
+      = link_to "mark complete", complete_routine_routine_task_path(@routine, rt), method: :put
+      = " | "
       = link_to "edit", edit_routine_routine_task_path(@routine, rt)
       = " | "
       = link_to "delete", routine_routine_task_path(@routine, rt), method: :delete
