@@ -1,3 +1,6 @@
-h1 Edit
+h1 = "#{'Edit: ' + @routine_task.detail}"
+br
 
 = render partial: 'form'
+br
+= link_to "Delete Routine Task", routine_routine_task_path(@routine, @routine_task), method: :delete, class: "btn btn-danger"
