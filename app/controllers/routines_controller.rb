@@ -1,4 +1,6 @@
 class RoutinesController < ApplicationController
+  before_filter :set_view_id
+
   def index
     @routines = Routine.all
   end
@@ -44,5 +46,9 @@ class RoutinesController < ApplicationController
   private
   def routine_params
     params.require(:routine).permit(:name, :frequency)
+  end
+
+  def set_view_id
+    @controller_class = "routine-page"
   end
 end
