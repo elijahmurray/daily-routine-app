@@ -15,6 +15,24 @@ class RoutineTasksController < ApplicationController
     end
   end
 
+  def edit
+    @routine_task = RoutineTask.find(params[:id])
+    @routine = @routine_task.routine
+
+  end
+
+  def update
+    @routine_task = RoutineTask.find(params[:id])
+    @routine = @routine_task.routine
+    @routine_task.update(routine_task_params)
+    if @routine.save
+      redirect_to routine_path(@routine)
+    else
+      render 'edit'
+    end
+
+  end
+
   def destroy
     @routine_task = RoutineTask.find(params[:id])
     @routine = @routine_task.routine
