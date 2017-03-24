@@ -1,5 +1,5 @@
 = simple_form_for([@routine, @routine_task]) do |f|
-  = f.input :task_type
-  = f.input :complete
   = f.input :detail
+  = f.input :task_type
   = f.button :submit, class: 'btn btn-primary'
+= link_to "Delete ", routine_routine_task_path(@routine, @routine_task), method: :delete, class: "btn btn-link text-danger"

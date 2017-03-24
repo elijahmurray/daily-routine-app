@@ -1,10 +1,6 @@
-h1 Show
-p = @routine.name
-p = @routine.frequency
+h1 = @routine.name
+p = "#{'frequency: ' + @routine.frequency.to_s}"
 
-br
-= link_to "New Routine Task", new_routine_routine_task_path(@routine)
-br
 ul
   - @routine.routine_tasks.each do |rt|
     li.routine-task
@@ -15,9 +11,10 @@ ul
         span.detail = rt.detail
         = " | "
         = link_to "edit", edit_routine_routine_task_path(@routine, rt)
-
-b Actions
-br
-= link_to "View All", routines_path, class: "btn btn-secondary"
-= link_to "Edit", edit_routine_path(@routine),  class: "btn btn-secondary"
-= link_to "Delete", routine_path(@routine), method: :delete, class: "btn btn-danger"
+= link_to "Add New Routine Task", new_routine_routine_task_path(@routine)
+.actions
+  b Actions
+  br
+  = link_to "View All", routines_path, class: "btn btn-secondary"
+  = link_to "Edit", edit_routine_path(@routine),  class: "btn btn-secondary"
+  = link_to "Delete", routine_path(@routine), method: :delete, class: "btn btn-danger"

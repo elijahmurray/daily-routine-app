@@ -5,8 +5,8 @@
     margin-bottom: 10px;
     list-style: none;
     .complete {
-      .checkbox { background: #333; }
-      .detail { text-decoration: line-through; }
+      .checkbox { background: #999; }
+      .detail { text-decoration: line-through; color: #777; }
     }
     .checkbox {
       height: 25px;
@@ -15,6 +15,9 @@
       background: #FAFAFA;
       border: 1px solid black;
     }
+  }
+  .actions {
+    margin-top: 20px;
   }
 }
 
