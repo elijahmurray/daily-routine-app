@@ -5,7 +5,7 @@ ul
   - @routine.routine_tasks.each do |rt|
     li.routine-task
       div class="#{'complete' if rt.complete?}"
-        = link_to complete_routine_routine_task_path(@routine, rt), method: :put do
+        = link_to complete_routine_routine_task_path(@routine, rt), method: :patch do
           .checkbox.checkbox-inline
         = " "
         span.detail = rt.detail

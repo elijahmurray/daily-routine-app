@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   resources :routines do
     resources :routine_tasks do
       member do
-        put 'complete'
+        patch 'complete'
       end
     end
   end
