@@ -1,7 +1,12 @@
 .jumbotron
-  h1 Starter Rails Application
-  p.lead Locked and loaded. Start modifying away
-  .btn-group
-    = link_to "Some button", "#", class: "btn btn-lg btn-primary"
-    = link_to "Some other button", "#", class: "btn btn-lg btn-success"
-  = link_to "New Routine", new_routine_path, class: "btn btn-link"
+  .row
+    .col-md-6
+      h3 = link_to "Goals", goals_path
+      ol
+        - @goals.each do |g|
+          li = link_to g.name, goal_path(g)
+    .col-md-6
+      h3 = link_to "Routines", routines_path
+      ul
+        - @routines.each do |r|
+          li = link_to r.name, routine_path(r)
