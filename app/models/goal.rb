@@ -7,9 +7,11 @@ class Goal < ActiveRecord::Base
                          36 => "3 Years",
                          60 => "5 Years",
                          120 => "10 Years"}
+  CATEGORIES = %w(Personal Professional Relationships)
 
   validates :name, presence:true
   validates :duration, presence:true
+  validates :category, presence:true
 
   def due_date
     self.created_at + duration.months
