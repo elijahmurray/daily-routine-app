@@ -1,0 +1,13 @@
+h1 Goals
+
+
+b All Goals
+ul
+  - @goals.each do |g|
+    li 
+      = link_to g.name, goal_path(g)
+      = " by "
+      = g.due_date.strftime("%B %e, %Y")
+
+br
+= link_to "Create Goal", new_goal_path, class: " btn btn-primary"

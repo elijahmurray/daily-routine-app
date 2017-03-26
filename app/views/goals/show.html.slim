@@ -1,0 +1,12 @@
+h1 = @goal.name
+
+b Due Date: 
+= @goal.due_date.strftime("%B %e, %Y")
+br
+
+b Description: 
+= @goal.description
+br
+
+= link_to "Edit", edit_goal_path(@goal), class: "btn btn-secondary"
+= link_to "Back to List", goals_path, class: "btn btn-secondary"

@@ -1,12 +1,10 @@
 Rails.application.routes.draw do
-  get 'routine_tasks/new'
-
-  get 'routines/new'
-
   devise_for :users
   get 'pages/home'
 
   root 'pages#home'
+
+  resources :goals
 
   resources :routines do
     resources :routine_tasks do

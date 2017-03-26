@@ -11,7 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170323025427) do
+ActiveRecord::Schema.define(version: 20170326185846) do
+
+  create_table "goals", force: :cascade do |t|
+    t.string   "name"
+    t.date     "due_date"
+    t.text     "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
 
   create_table "routine_items", force: :cascade do |t|
     t.string   "type"
