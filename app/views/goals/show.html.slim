@@ -1,7 +1,7 @@
 h1 = @goal.name
 
-b Duration (in months): 
-= @goal.duration
+b Due Date: 
+= pretty_due_date(@goal)
 br
 
 b Description: 

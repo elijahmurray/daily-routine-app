@@ -11,4 +11,7 @@ class Goal < ActiveRecord::Base
   validates :name, presence:true
   validates :duration, presence:true
 
+  def due_date
+    self.created_at + duration.months
+  end
 end
