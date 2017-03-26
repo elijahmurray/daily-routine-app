@@ -1,5 +1,5 @@
 = simple_form_for @goal do |f|
   = f.input :name
-  = f.input :time_to_complete
+  = f.input :time_to_complete, collection: Goal.durations, prompt: "Pick a timeline"
   = f.input :description
   = f.button :submit, class: "btn btn-primary"
