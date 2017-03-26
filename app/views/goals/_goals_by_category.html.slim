@@ -1,0 +1,8 @@
+b = category + " Goals"
+ul
+  - @goals.select {|goal| goal.category == category}.each do |category_goal|
+    li 
+      = link_to category_goal.name, goal_path(category_goal)
+      = " by "
+      = pretty_due_date(category_goal)
+
