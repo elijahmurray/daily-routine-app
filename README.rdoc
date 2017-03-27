@@ -1,5 +1,10 @@
 == README
 
+Test Coverage Needed
+- Routines/models
+- Routine_task/models
+- all controllers
+
 To Do
 - Add validation feedback on save or fail to save.
 - Add inline validation.:w
