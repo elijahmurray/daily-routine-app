@@ -50,6 +50,6 @@ class RoutineTasksController < ApplicationController
 
   private
   def routine_task_params
-    params.require(:routine_task).permit(:task_type, :complete, :detail)
+    params.require(:routine_task).permit(:requires_response, :complete, :detail)
   end
 end
