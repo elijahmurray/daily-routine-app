@@ -2,7 +2,7 @@ class RoutinesController < ApplicationController
   before_filter :set_view_id
 
   def index
-    @routines = Routine.all
+    @routines = current_user.routines
   end
 
   def edit

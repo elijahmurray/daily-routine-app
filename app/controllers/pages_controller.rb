@@ -1,6 +1,8 @@
 class PagesController < ApplicationController
   def home
-    @routines = Routine.all.to_a
-    @goals = Goal.all.to_a
+    if user_signed_in?
+      @routines = current_user.routines
+      @goals = current_user.goals
+    end
   end
 end

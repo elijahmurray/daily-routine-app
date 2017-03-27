@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170326220635) do
+ActiveRecord::Schema.define(version: 20170327014742) do
 
   create_table "goals", force: :cascade do |t|
     t.string   "name"
@@ -20,7 +20,10 @@ ActiveRecord::Schema.define(version: 20170326220635) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.string   "category"
+    t.integer  "user_id"
   end
+
+  add_index "goals", ["user_id"], name: "index_goals_on_user_id"
 
   create_table "routine_items", force: :cascade do |t|
     t.string   "type"
@@ -46,7 +49,10 @@ ActiveRecord::Schema.define(version: 20170326220635) do
     t.decimal  "frequency"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "user_id"
   end
+
+  add_index "routines", ["user_id"], name: "index_routines_on_user_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false

@@ -1,6 +1,6 @@
 class GoalsController < ApplicationController
   def index
-    @goals = Goal.all.to_a
+    @goals = current_user.goals
   end
 
   def new

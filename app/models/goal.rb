@@ -1,4 +1,5 @@
 class Goal < ActiveRecord::Base
+  belongs_to :user
   DURATIONS_IN_MONTHS = {1 => "1 Month",
                          3 => "3 Months",
                          6 => "6 Months",
