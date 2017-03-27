@@ -1,23 +1,3 @@
 .float-left { float: left; } //should be included from bootstrap, but wasn't working for simple_form_bootstrap.rb
 
-#routine-page {
-  li.routine-task {
-    margin-bottom: 10px;
-    list-style: none;
-    .complete {
-      .checkbox { background: #999; }
-      .detail { text-decoration: line-through; color: #777; }
-    }
-    .checkbox {
-      height: 25px;
-      width: 25px;
-      border-radius: 3px;
-      background: #FAFAFA;
-      border: 1px solid black;
-    }
-  }
-  .actions {
-    margin-top: 20px;
-  }
-}
-
+@import "routines";

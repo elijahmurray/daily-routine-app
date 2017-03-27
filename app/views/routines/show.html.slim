@@ -7,8 +7,7 @@ ul
       div class="#{'complete' if rt.complete?}"
         = link_to complete_routine_routine_task_path(@routine, rt), method: :patch do
           .checkbox.checkbox-inline
-        = " "
-        span.detail = rt.detail
+          .detail.inline = rt.detail
         = " | "
         = link_to "edit", edit_routine_routine_task_path(@routine, rt)
 = link_to "Add New Routine Task", new_routine_routine_task_path(@routine)

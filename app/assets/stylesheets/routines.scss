@@ -1,3 +1,26 @@
 // Place all the styles related to the Routines controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#routine-page {
+  li.routine-task {
+    margin-bottom: 10px;
+    list-style: none;
+    .complete {
+      .checkbox { background: #999; }
+      .detail { text-decoration: line-through; color: #777; }
+    }
+    .checkbox {
+      height: 25px;
+      width: 25px;
+      border-radius: 3px;
+      background: #FAFAFA;
+      border: 1px solid black;
+    }
+    .detail { display: inline-block; }
+  }
+  .actions {
+    margin-top: 20px;
+  }
+}
+
