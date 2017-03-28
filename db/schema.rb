@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170327225357) do
+ActiveRecord::Schema.define(version: 20170327230018) do
 
   create_table "goals", force: :cascade do |t|
     t.string   "name"
@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(version: 20170327225357) do
     t.integer  "routine_id"
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
+    t.text     "response"
   end
 
   add_index "routine_tasks", ["routine_id"], name: "index_routine_tasks_on_routine_id"
