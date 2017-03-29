@@ -2,22 +2,9 @@ h1 All Routines
 
 = link_to "Create New", new_routine_path, class: "btn btn-primary"
 
-#modal-window class="modal hide fade" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"
-  .modal-dialog role="document"
-    .modal-content
-      .modal-header
-        button.close aria-hidden="true" data-dismiss="modal" type="button"  ×
-        h3#myModalLabel Modal header
-      .modal-body
-        | **here comes whatever you want to show!**
-      .modal-footer
-        button.btn aria-hidden="true" data-dismiss="modal"  Close
-        button.btn.btn-primary Save changes
-
-
-
 = link_to 'Test', test_path,  {:remote => true, 'data-toggle' =>  "modal", 'data-target' => '#modal-window'}
 
+#modal-window class="modal hide fade" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"
 
 table.table
   thead
