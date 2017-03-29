@@ -1,6 +1,13 @@
 class RoutinesController < ApplicationController
   before_filter :set_view_id
 
+  def test
+    respond_to do |format|
+      format.html
+      format.js
+    end
+  end
+
   def index
     @routines = current_user.routines
   end
