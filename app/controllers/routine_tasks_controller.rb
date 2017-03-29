@@ -1,6 +1,8 @@
 class RoutineTasksController < ApplicationController
 
   def record_response
+    @routine_task = RoutineTask.find(params[:id])
+    @routine = @routine_task.routine
     respond_to do |format|
       format.html
       format.js
