@@ -12,7 +12,7 @@ ul
           .checkbox.checkbox-inline
           .detail.inline = rt.detail
         = " | "
-        = link_to 'Test', test_routine_routine_tasks_path(@routine),  {:remote => true, 'data-toggle' =>  "modal", 'data-target' => '#modal-window'}
+        = link_to 'Record Response', record_response_routine_routine_task_path(@routine, rt),  {:remote => true, 'data-toggle' =>  "modal", 'data-target' => '#modal-window'}
         = " | "
         = link_to "edit", edit_routine_routine_task_path(@routine, rt)
 = link_to "Add New Routine Task", new_routine_routine_task_path(@routine)

@@ -12,9 +12,9 @@ Rails.application.routes.draw do
   resources :routines do
     # get "test" => 'routines#test', :as => :test
     resources :routine_tasks do
-      get 'test', on: :collection
       member do
         patch 'complete'
+        get 'record_response'
       end
     end
   end

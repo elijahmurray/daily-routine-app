@@ -1,6 +1,6 @@
 class RoutineTasksController < ApplicationController
-  
-  def test
+
+  def record_response
     respond_to do |format|
       format.html
       format.js
