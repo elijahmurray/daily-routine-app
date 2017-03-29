@@ -1,3 +1,4 @@
+= link_to "Back", routines_path
 h1 = @routine.name
 p = "#{'frequency: ' + @routine.frequency.to_s}"
 
@@ -8,17 +9,19 @@ ul
   - @routine.routine_tasks.each do |rt|
     li.routine-task
       div class="#{'complete' if rt.complete?}"
-        = link_to complete_routine_routine_task_path(@routine, rt), method: :patch do
-          .checkbox.checkbox-inline
-          .detail.inline = rt.detail
-        = " | "
-        = link_to 'Record Response', record_response_routine_routine_task_path(@routine, rt),  {:remote => true, 'data-toggle' =>  "modal", 'data-target' => '#modal-window'}
+        - if rt.requires_response?
+          = link_to record_response_routine_routine_task_path(@routine, rt),  {:remote => true, 'data-toggle' =>  "modal", 'data-target' => '#modal-window'} do
+            .checkbox.checkbox-inline
+            .detail.inline = rt.detail
+        - else
+          = link_to complete_routine_routine_task_path(@routine, rt), method: :patch do
+            .checkbox.checkbox-inline
+            .detail.inline = rt.detail
         = " | "
         = link_to "edit", edit_routine_routine_task_path(@routine, rt)
 = link_to "Add New Routine Task", new_routine_routine_task_path(@routine)
 .actions
   b Actions
   br
-  = link_to "View All", routines_path, class: "btn btn-secondary"
-  = link_to "Edit", edit_routine_path(@routine),  class: "btn btn-secondary"
+  = link_to "Edit Routine", edit_routine_path(@routine),  class: "btn btn-secondary"
   = link_to "Delete", routine_path(@routine), method: :delete, class: "btn btn-danger"

@@ -5,6 +5,9 @@ Feature Description: Daily Routine
 - each item is duplicated per date at midnight
 - some types of routine_tasks have a response that is recorded
 
+Feature Description: Routine Tasks
+- [require response validation](http://stackoverflow.com/questions/13242315/rails-remote-forms-validation)
+
 Feature Description: Connections
 - Add person
 - Log meeting + notes
