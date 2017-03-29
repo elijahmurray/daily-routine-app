@@ -1,6 +1,9 @@
 h1 = @routine.name
 p = "#{'frequency: ' + @routine.frequency.to_s}"
 
+
+#modal-window class="modal hide fade" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"
+
 ul
   - @routine.routine_tasks.each do |rt|
     li.routine-task
@@ -8,6 +11,8 @@ ul
         = link_to complete_routine_routine_task_path(@routine, rt), method: :patch do
           .checkbox.checkbox-inline
           .detail.inline = rt.detail
+        = " | "
+        = link_to 'Test', test_routine_routine_tasks_path(@routine),  {:remote => true, 'data-toggle' =>  "modal", 'data-target' => '#modal-window'}
         = " | "
         = link_to "edit", edit_routine_routine_task_path(@routine, rt)
 = link_to "Add New Routine Task", new_routine_routine_task_path(@routine)

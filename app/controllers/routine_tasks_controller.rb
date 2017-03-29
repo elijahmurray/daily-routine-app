@@ -1,4 +1,12 @@
 class RoutineTasksController < ApplicationController
+  
+  def test
+    respond_to do |format|
+      format.html
+      format.js
+    end
+  end
+
   def new
     @routine = Routine.find(params[:routine_id])
     @routine_task = @routine.routine_tasks.new

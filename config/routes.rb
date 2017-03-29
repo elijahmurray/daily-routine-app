@@ -7,11 +7,12 @@ Rails.application.routes.draw do
   root 'pages#home'
 
   resources :goals
-  
-  get "routines/test" => 'routines#test', :as => :test
+
 
   resources :routines do
+    # get "test" => 'routines#test', :as => :test
     resources :routine_tasks do
+      get 'test', on: :collection
       member do
         patch 'complete'
       end
