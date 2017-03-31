@@ -1,0 +1,7 @@
+= simple_form_for @connection do |f|
+  = f.input :first_name
+  = f.input :last_name
+  = f.input :type
+  = f.input :last_contact, as: :date, html5: true
+  = f.button :submit, class: 'btn btn-primary'
+  button.btn.btn-link type="button" onclick="document.getElementById('connection_last_contact').value = formatDate()" mark as today
