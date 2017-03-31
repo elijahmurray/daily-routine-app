@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'connections/index'
+  resources :connections
 
   devise_for :users
   get 'pages/home'

@@ -1,4 +1,9 @@
 h1 Connections#index
+ul 
+  - @connections.each do |c|
+    li = link_to c.name, connection_path(c)
+
+  = link_to "Add Connection", new_connection_path, class: 'btn btn-secondary'
 ul
   li list out your network
   li follow up time line

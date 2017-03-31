@@ -11,7 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170327230018) do
+ActiveRecord::Schema.define(version: 20170329011238) do
+
+  create_table "connections", force: :cascade do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "type"
+    t.text     "notes"
+    t.datetime "last_contact"
+    t.datetime "follow_up_date"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
 
   create_table "goals", force: :cascade do |t|
     t.string   "name"
