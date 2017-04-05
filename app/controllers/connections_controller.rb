@@ -32,6 +32,6 @@ class ConnectionsController < ApplicationController
 
   private
   def connection_params
-    params.require(:connection).permit(:first_name, :last_name, :type, :last_contact)
+    params.require(:connection).permit(:first_name, :last_name, :connection_type, :last_contact)
   end
 end
