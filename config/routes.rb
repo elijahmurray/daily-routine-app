@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'routine_logs/new'
-
   resources :connections
 
   devise_for :users
@@ -13,7 +11,11 @@ Rails.application.routes.draw do
 
 
   resources :routines do
-    resource :routine_logs, only: [:new]
+    resource :routine_logs, only: [:new, :delete_all] do
+      collection do
+        delete 'delete_all'
+      end
+    end
     resources :routine_tasks do
       member do
         patch 'complete'

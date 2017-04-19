@@ -27,10 +27,12 @@ ul
   br
   = link_to "Done with Day", new_routine_routine_logs_path(@routine), class: "btn btn-success"
   = link_to "Delete Routine", routine_path(@routine), method: :delete, class: "btn btn-link text-danger"
+  = link_to "Delete All Logs", delete_all_routine_routine_logs_path(@routine), method: :delete, class: "btn btn-link text-danger"
 
 h2 Routine History
-ul
-  li every frequency, 
-  li create routine_log, with data from each routine_task_log
-  li reset routine_tasks
+- @routine.routine_logs.each do |rl|
+  h4=rl.created_at.strftime('%e %b, %Y')
+  ul
+  - rl.routine_task_logs.each do |rtl|
+    li=rtl.detail + (rtl.complete ? " - completed" : "")
 
