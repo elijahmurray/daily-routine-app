@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+
+  get 'routine_logs/new'
+
   resources :connections
 
   devise_for :users
@@ -10,7 +13,7 @@ Rails.application.routes.draw do
 
 
   resources :routines do
-    # get "test" => 'routines#test', :as => :test
+    resource :routine_logs, only: [:new]
     resources :routine_tasks do
       member do
         patch 'complete'

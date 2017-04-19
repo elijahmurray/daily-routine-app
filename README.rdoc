@@ -10,21 +10,21 @@ Feature Description: Routine Tasks
 - [require response validation](http://stackoverflow.com/questions/13242315/rails-remote-forms-validation)
 
 Feature Description: Connections
-- Add person
 - Log meeting + notes
 - schedule followup
-- Last contact
-- connection type
 
 Test Coverage Needed
 - Routines/models
 - Routine_task/models
 - all controllers
 
+Routine Log
+- add flash messages 
+
 To Do
 - fix prod DB
 - Add validation feedback on save or fail to save.
-- Add inline validation.:w
+- Add inline validation.
 
 This README would normally document whatever steps are necessary to get the
 application up and running.

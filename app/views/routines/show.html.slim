@@ -1,5 +1,7 @@
-= link_to "Back", routines_path
-h1 = @routine.name
+.row
+  h1.float-left = @routine.name
+  .float-left= link_to "Edit Routine", edit_routine_path(@routine),  class: "btn btn-secondary float-left"
+.clearfix
 p = "#{'frequency: ' + @routine.frequency.to_s}"
 
 
@@ -23,5 +25,12 @@ ul
 .actions
   b Actions
   br
-  = link_to "Edit Routine", edit_routine_path(@routine),  class: "btn btn-secondary"
-  = link_to "Delete", routine_path(@routine), method: :delete, class: "btn btn-danger"
+  = link_to "Done with Day", new_routine_routine_logs_path(@routine), class: "btn btn-success"
+  = link_to "Delete Routine", routine_path(@routine), method: :delete, class: "btn btn-link text-danger"
+
+h2 Routine History
+ul
+  li every frequency, 
+  li create routine_log, with data from each routine_task_log
+  li reset routine_tasks
+
