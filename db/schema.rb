@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170419210649) do
+ActiveRecord::Schema.define(version: 20170419213847) do
 
   create_table "connections", force: :cascade do |t|
     t.string   "first_name"
@@ -51,6 +51,17 @@ ActiveRecord::Schema.define(version: 20170419210649) do
   end
 
   add_index "routine_logs", ["routine_id"], name: "index_routine_logs_on_routine_id"
+
+  create_table "routine_task_logs", force: :cascade do |t|
+    t.integer  "routine_log_id"
+    t.boolean  "complete"
+    t.string   "detail"
+    t.text     "response"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
+  add_index "routine_task_logs", ["routine_log_id"], name: "index_routine_task_logs_on_routine_log_id"
 
   create_table "routine_tasks", force: :cascade do |t|
     t.boolean  "requires_response"
