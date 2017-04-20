@@ -1,0 +1,7 @@
+= link_to "Back", connection_path(@meeting.connection), class: ""
+h1 = "Meeting for #{pretty_date(@meeting.date)}"
+
+p = @meeting.notes
+
+
+= link_to "Edit", edit_connection_meeting_path(@meeting.connection, @meeting), class: "btn btn-secondary"

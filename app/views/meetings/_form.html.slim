@@ -1,0 +1,6 @@
+= simple_form_for([@connection, @meeting]) do |f|
+  = f.input :notes
+  = f.input :date, html5: true
+  = f.submit class: "btn btn-primary"
+  button.btn.btn-link type="button" onclick="document.getElementById('meeting_date').value = formatDate()" mark as today
+

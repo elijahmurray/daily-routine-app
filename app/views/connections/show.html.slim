@@ -1,5 +1,21 @@
 = link_to 'Back', connections_path
-h1 Show
+h1 = @connection.name
+= link_to "Edit", edit_connection_path(@connection)
+p
+  b Connection Type: 
+  | #{@connection.connection_type}
+p  
+  b Last Contact: 
+  | #{pretty_date(@connection.last_contact)}
 
-= render partial: 'form'
+= link_to "Log meeting", new_connection_meeting_path(@connection), class: "btn btn-secondary"
+br
+
+br
+ul
+- @connection.meetings.each do |meeting|
+  li 
+    = link_to meeting.date, connection_meeting_path(@connection, meeting)
+    |  -  
+    = meeting.notes[0..141]
 

@@ -1,6 +1,4 @@
 == README
-TODO: Update goals and routines form to be attached to the current user
-- Fix same issue in prod, and associate existing data with main user
 
 Feature Description: Daily Routine
 - each item can be marked as complete
@@ -12,8 +10,8 @@ Feature Description: Routine Tasks
 - [require response validation](http://stackoverflow.com/questions/13242315/rails-remote-forms-validation)
 
 Feature Description: Connections
-- Log meeting + notes
 - schedule followup
+- add validation to meetings
 
 Test Coverage Needed
 - Routines/models

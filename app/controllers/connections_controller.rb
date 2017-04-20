@@ -12,11 +12,15 @@ class ConnectionsController < ApplicationController
     end
   end
 
+  def edit
+    @connection = Connection.find(params[:id])
+  end
+
   def update
     @connection = Connection.find(params[:id])
     @connection.update(connection_params)
     if @connection.save
-      redirect_to connections_path
+      redirect_to connection_path(@connection)
     else
       render 'edit'
     end

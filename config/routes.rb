@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
-  resources :connections
+  resources :connections do
+    resources :meetings
+  end
 
   devise_for :users
   get 'pages/home'
