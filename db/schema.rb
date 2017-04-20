@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20170419213847) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "connections", force: :cascade do |t|
     t.string   "first_name"
     t.string   "last_name"
@@ -34,7 +37,7 @@ ActiveRecord::Schema.define(version: 20170419213847) do
     t.integer  "user_id"
   end
 
-  add_index "goals", ["user_id"], name: "index_goals_on_user_id"
+  add_index "goals", ["user_id"], name: "index_goals_on_user_id", using: :btree
 
   create_table "routine_items", force: :cascade do |t|
     t.string   "type"
@@ -50,7 +53,7 @@ ActiveRecord::Schema.define(version: 20170419213847) do
     t.datetime "updated_at", null: false
   end
 
-  add_index "routine_logs", ["routine_id"], name: "index_routine_logs_on_routine_id"
+  add_index "routine_logs", ["routine_id"], name: "index_routine_logs_on_routine_id", using: :btree
 
   create_table "routine_task_logs", force: :cascade do |t|
     t.integer  "routine_log_id"
@@ -61,7 +64,7 @@ ActiveRecord::Schema.define(version: 20170419213847) do
     t.datetime "updated_at",     null: false
   end
 
-  add_index "routine_task_logs", ["routine_log_id"], name: "index_routine_task_logs_on_routine_log_id"
+  add_index "routine_task_logs", ["routine_log_id"], name: "index_routine_task_logs_on_routine_log_id", using: :btree
 
   create_table "routine_tasks", force: :cascade do |t|
     t.boolean  "requires_response"
@@ -73,7 +76,7 @@ ActiveRecord::Schema.define(version: 20170419213847) do
     t.text     "response"
   end
 
-  add_index "routine_tasks", ["routine_id"], name: "index_routine_tasks_on_routine_id"
+  add_index "routine_tasks", ["routine_id"], name: "index_routine_tasks_on_routine_id", using: :btree
 
   create_table "routines", force: :cascade do |t|
     t.string   "name"
@@ -83,7 +86,7 @@ ActiveRecord::Schema.define(version: 20170419213847) do
     t.integer  "user_id"
   end
 
-  add_index "routines", ["user_id"], name: "index_routines_on_user_id"
+  add_index "routines", ["user_id"], name: "index_routines_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -100,7 +103,12 @@ ActiveRecord::Schema.define(version: 20170419213847) do
     t.datetime "updated_at"
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", unique: true
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "goals", "users"
+  add_foreign_key "routine_logs", "routines"
+  add_foreign_key "routine_task_logs", "routine_logs"
+  add_foreign_key "routine_tasks", "routines"
+  add_foreign_key "routines", "users"
 end
