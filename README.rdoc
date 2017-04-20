@@ -1,4 +1,6 @@
 == README
+TODO: Update goals and routines form to be attached to the current user
+- Fix same issue in prod, and associate existing data with main user
 
 Feature Description: Daily Routine
 - each item can be marked as complete
