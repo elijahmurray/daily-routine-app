@@ -30,7 +30,7 @@ class RoutinesController < ApplicationController
   end
   
   def create
-    @routine = Routine.new(routine_params)
+    @routine = current_user.routines.new(routine_params)
 
     if @routine.save
       redirect_to @routine
