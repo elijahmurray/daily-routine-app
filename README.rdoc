@@ -8,6 +8,7 @@ Feature Description: Daily Routine
 
 Feature Description: Routine Tasks
 - [require response validation](http://stackoverflow.com/questions/13242315/rails-remote-forms-validation)
+- View routine responses that you've written 
 
 Feature Description: Connections
 - schedule followup
@@ -21,6 +22,7 @@ Test Coverage Needed
 
 Routine Log
 - add flash messages 
+-Add view for routine response
 
 To Do
 - fix prod DB
