@@ -1,4 +1,4 @@
-= link_to 'Back', connections_path
+= link_to 'Back to all Connections', connections_path
 h1 = @connection.name
 = link_to "Edit", edit_connection_path(@connection)
 p
@@ -17,5 +17,8 @@ ul
   li 
     = link_to meeting.date, connection_meeting_path(@connection, meeting)
     |  -  
-    = meeting.notes[0..141]
+    - if meeting.notes.size > 140
+      = meeting.notes[0..141] + "..."
+    - else
+      = meeting.notes
 

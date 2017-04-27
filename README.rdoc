@@ -12,6 +12,7 @@ Feature Description: Routine Tasks
 Feature Description: Connections
 - schedule followup
 - add validation to meetings
+- List ppl you met with last week for follow-ups 
 
 Test Coverage Needed
 - Routines/models
