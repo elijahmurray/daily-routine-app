@@ -2,6 +2,8 @@ class Routine < ActiveRecord::Base
   belongs_to :user
   has_many :routine_tasks
   has_many :routine_logs
+  validates :name, presence: :true
+  validates :frequency, presence: :true
 
   def reset
     self.routine_tasks.each do |rt|

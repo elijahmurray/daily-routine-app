@@ -3,11 +3,15 @@ namespace :routine_tasks do
   task create_routine_task_logs: :environment do
     @routines = Routine.all
     @routines.each do |routine|
-      #if routine.frequency > last_ran_hours_since_now
+      now = Time.now
+      most_recent_log = routine.routine_logs.exists? ? routine.routine_logs.last.created_at.to_time : routine.created_at.to_time
+      hours_since_last_log = (now - most_recent_log) / 1.hours
+
+      if hours_since_last_log > routine.frequency 
         routine.routine_logs.create
         routine.reset
-      #else
-        #return
+        puts "Created log for Routine: " + routine.id.to_s
+      end
      end
   end
 
