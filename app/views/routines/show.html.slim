@@ -27,10 +27,9 @@ ul
   br
   = link_to "Done with Day", new_routine_routine_logs_path(@routine), class: "btn btn-success"
   = link_to "Delete Routine", routine_path(@routine), method: :delete, class: "btn btn-link text-danger"
-  = link_to "Delete All Logs", delete_all_routine_routine_logs_path(@routine), method: :delete, class: "btn btn-link text-danger"
 
 h2 Routine History
-- @routine.routine_logs.each do |rl|
+- @routine.routine_logs.order('created_at DESC').each do |rl|
   h4=rl.created_at.strftime('%e %b, %Y')
   ul
   - rl.routine_task_logs.each do |rtl|

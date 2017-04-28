@@ -6,6 +6,8 @@ Feature Description: Daily Routine
 
 Feature Description: Routine Tasks
 - [require response validation](http://stackoverflow.com/questions/13242315/rails-remote-forms-validation)
+- clean multiline responses
+- Auto advance to next task; carousel mode
 
 Feature Description: Connections
 - schedule followup

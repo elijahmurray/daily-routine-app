@@ -13,11 +13,8 @@ Rails.application.routes.draw do
 
 
   resources :routines do
-    resource :routine_logs, only: [:new, :delete_all] do
-      collection do
-        delete 'delete_all'
-      end
-    end
+    resource :routine_logs, only: [:new]
+
     resources :routine_tasks do
       member do
         patch 'complete'
