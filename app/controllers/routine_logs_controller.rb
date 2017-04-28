@@ -7,10 +7,4 @@ class RoutineLogsController < ApplicationController
     @routine.reset
     redirect_to @routine
   end
-
-  def delete_all
-    @routine = Routine.find(params[:routine_id])
-    @routine.routine_logs.delete_all
-    redirect_to @routine
-  end
 end

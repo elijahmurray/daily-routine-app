@@ -3,6 +3,7 @@
 Feature Description: Daily Routine
 - each item is duplicated per date at midnight
 - btn: hide completed routine tasks
+- destroy dependents
 
 Feature Description: Routine Tasks
 - [require response validation](http://stackoverflow.com/questions/13242315/rails-remote-forms-validation)
@@ -29,6 +30,11 @@ Test Coverage Needed
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
+
+Rake Tasks
+----------
+This task resets all routines that have expired:
+`rake routine_tasks:create_routine_task_logs`
 
 Things you may want to cover:
 

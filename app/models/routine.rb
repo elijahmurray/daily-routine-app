@@ -5,8 +5,7 @@ class Routine < ActiveRecord::Base
 
   def reset
     self.routine_tasks.each do |rt|
-      self.routine_tasks.create(detail: rt.detail, requires_response: rt.requires_response)
-      rt.destroy
+      rt.update_attributes(response: '', complete: false)
     end
   end
 end

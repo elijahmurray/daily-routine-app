@@ -6,7 +6,6 @@ class RoutineLog < ActiveRecord::Base
   def create_routine_task_logs
     for rt in self.routine.routine_tasks do
       params = [complete: rt.complete, detail: rt.detail, response: rt.response]
-      rt.delete
       self.routine_task_logs.create(params)
     end
   end
