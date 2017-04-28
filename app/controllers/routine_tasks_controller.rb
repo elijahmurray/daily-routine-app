@@ -9,6 +9,15 @@ class RoutineTasksController < ApplicationController
     end
   end
 
+  def update_response
+    @routine_task = RoutineTask.find(params[:id])
+    @routine = @routine_task.routine
+    @routine_task.update_attributes(routine_task_params)
+    if @routine_task.save
+      render routine_path(@routine)
+    end
+  end
+
   def new
     @routine = Routine.find(params[:routine_id])
     @routine_task = @routine.routine_tasks.new
@@ -60,6 +69,6 @@ class RoutineTasksController < ApplicationController
 
   private
   def routine_task_params
-    params.require(:routine_task).permit(:requires_response, :complete, :detail)
+    params.require(:routine_task).permit(:requires_response, :complete, :detail, :response)
   end
 end

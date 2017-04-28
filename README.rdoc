@@ -1,33 +1,29 @@
 == README
 
 Feature Description: Daily Routine
-- each item can be marked as complete
 - each item is duplicated per date at midnight
-- some types of routine_tasks have a response that is recorded
 - btn: hide completed routine tasks
 
 Feature Description: Routine Tasks
 - [require response validation](http://stackoverflow.com/questions/13242315/rails-remote-forms-validation)
-- View routine responses that you've written 
 
 Feature Description: Connections
 - schedule followup
 - add validation to meetings
 - List ppl you met with last week for follow-ups 
 
-Test Coverage Needed
-- Routines/models
-- Routine_task/models
-- all controllers
-
 Routine Log
 - add flash messages 
 -Add view for routine response
 
 To Do
-- fix prod DB
 - Add validation feedback on save or fail to save.
 - Add inline validation.
+
+Test Coverage Needed
+- Routines/models
+- Routine_task/models
+- all controllers
 
 This README would normally document whatever steps are necessary to get the
 application up and running.

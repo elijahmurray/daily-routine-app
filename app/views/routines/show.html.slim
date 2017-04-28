@@ -10,7 +10,7 @@ p = "#{'frequency: ' + @routine.frequency.to_s}"
 ul
   - @routine.routine_tasks.each do |rt|
     li.routine-task
-      div class="#{'complete' if rt.complete?}"
+      div class="#{'complete' if rt.complete}"
         - if rt.requires_response?
           = link_to record_response_routine_routine_task_path(@routine, rt),  {:remote => true, 'data-toggle' =>  "modal", 'data-target' => '#modal-window'} do
             .checkbox.checkbox-inline
@@ -34,5 +34,10 @@ h2 Routine History
   h4=rl.created_at.strftime('%e %b, %Y')
   ul
   - rl.routine_task_logs.each do |rtl|
-    li=rtl.detail + (rtl.complete ? " - completed" : "")
-
+    li.routine-task-log
+      div class="#{'complete' if rtl.complete}"
+        .checkbox.checkbox-inline
+        .detail
+          = rtl.detail 
+        - if rtl.response?
+          = " | " + rtl.response
