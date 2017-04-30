@@ -1,9 +1,10 @@
 == README
 
-Feature Description: Daily Routine
-- each item is duplicated per date at midnight
+Feature Description: Routines
 - btn: hide completed routine tasks
 - destroy dependents
+- Update rake task to run based on frequency and day of week, not create date
+  - Frequency: Daily, Weekly, Monthly, Yearly routines
 
 Feature Description: Routine Tasks
 - [require response validation](http://stackoverflow.com/questions/13242315/rails-remote-forms-validation)
