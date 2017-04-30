@@ -6,9 +6,9 @@ table.table
   thead
     tr
       th name
-      th frequency
+      th repeat_frequency
   tbody
   - @routines.each do |r|
     tr 
       td = link_to r.name, r
-      td = r.frequency
+      td = r.repeat_frequency

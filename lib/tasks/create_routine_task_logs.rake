@@ -1,17 +1,24 @@
 desc 'Check if a routine has "expired" its frequency. If so, create logs for each routine_task and create the fresh routine.'
-  task create_routine_task_logs: :environment do
-    @routines = Routine.all
-    @routines.each do |routine|
-      now = Time.now
-      most_recent_log = routine.routine_logs.exists? ? routine.routine_logs.last.created_at.to_time : routine.created_at.to_time
-      hours_since_last_log = (now - most_recent_log) / 1.hours
+task create_routine_task_logs: :environment do
+  @routines = Routine.all
+  @routines.each do |routine|
+    # if repeat_frequency
+    case routine.repeat_frequency
+    when 'Daily'
+      create_logs(routine)
+    when 'Weekly'
+      create_logs(routine) if Date.today == Date.today.beginning_of_week
+    when 'Monthly'
+      create_logs(routine) if Date.today == Date.today.beginning_of_month
+    when 'Yearly'
+      create_logs(routine) if Date.today == Date.today.beginning_of_year
+    end
+  end
+end
 
-if hours_since_last_log > routine.frequency 
+def create_logs(routine)
   routine.routine_logs.create
   routine.reset
-  puts "Created log for Routine: " + routine.id.to_s
-end
-  end
 end
 
 # desc 'send emails to all users with a list of upcoming and late reminders'

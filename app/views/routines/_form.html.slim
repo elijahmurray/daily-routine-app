@@ -1,5 +1,5 @@
 = simple_form_for @routine do |f|
   = f.input :name
-  = f.input :frequency, label: "Frequency (in hours)"
+  = f.input :repeat_frequency, as: :select, collection: Routine::REPEAT_FREQUENCY
   = f.button :submit, class: 'btn btn-primary'
 

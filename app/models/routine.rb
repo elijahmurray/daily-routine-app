@@ -3,7 +3,9 @@ class Routine < ActiveRecord::Base
   has_many :routine_tasks
   has_many :routine_logs
   validates :name, presence: :true
-  validates :frequency, presence: :true
+  validates :repeat_frequency, presence: :true
+
+  REPEAT_FREQUENCY = ['Daily', 'Weekly', 'Monthly', 'Yearly']
 
   def reset
     self.routine_tasks.each do |rt|

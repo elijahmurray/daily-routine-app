@@ -45,7 +45,7 @@ class RoutinesController < ApplicationController
 
   private
   def routine_params
-    params.require(:routine).permit(:name, :frequency)
+    params.require(:routine).permit(:name, :repeat_frequency)
   end
 
   def set_view_id

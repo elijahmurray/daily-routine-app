@@ -2,7 +2,7 @@
   h1.float-left = @routine.name
   .float-left= link_to "Edit Routine", edit_routine_path(@routine),  class: "btn btn-secondary float-left"
 .clearfix
-p = "#{'frequency: ' + @routine.frequency.to_s}"
+p = @routine.repeat_frequency
 
 
 #modal-window class="modal hide fade" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"
