@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170430152902) do
+ActiveRecord::Schema.define(version: 20170430161105) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -118,8 +118,8 @@ ActiveRecord::Schema.define(version: 20170430152902) do
 
   add_foreign_key "goals", "users"
   add_foreign_key "meetings", "connections"
-  add_foreign_key "routine_logs", "routines"
+  add_foreign_key "routine_logs", "routines", on_delete: :cascade
   add_foreign_key "routine_task_logs", "routine_logs"
-  add_foreign_key "routine_tasks", "routines"
+  add_foreign_key "routine_tasks", "routines", on_delete: :cascade
   add_foreign_key "routines", "users"
 end

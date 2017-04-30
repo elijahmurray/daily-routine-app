@@ -1,6 +1,6 @@
 class RoutineLog < ActiveRecord::Base
   belongs_to :routine
-  has_many :routine_task_logs
+  has_many :routine_task_logs, dependent: :destroy
   after_create :create_routine_task_logs
 
   def create_routine_task_logs

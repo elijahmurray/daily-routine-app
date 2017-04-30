@@ -24,7 +24,7 @@ class RoutinesController < ApplicationController
 
   def destroy
     @routine = Routine.find(params[:id])
-    @routine.delete
+    @routine.destroy
 
     redirect_to routines_path
   end

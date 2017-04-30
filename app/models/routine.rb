@@ -1,7 +1,7 @@
 class Routine < ActiveRecord::Base
   belongs_to :user
-  has_many :routine_tasks
-  has_many :routine_logs
+  has_many :routine_tasks, dependent: :destroy
+  has_many :routine_logs, dependent: :destroy
   validates :name, presence: :true
   validates :repeat_frequency, presence: :true
 
