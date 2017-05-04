@@ -18,7 +18,7 @@ ul
     = link_to meeting.date, connection_meeting_path(@connection, meeting)
     |  -  
     - if meeting.notes.size > 140
-      = meeting.notes[0..141] + "..."
+      = render_html_text(meeting.notes[0..141] + "...")
     - else
-      = meeting.notes
+      = render_html_text(meeting.notes)
 
