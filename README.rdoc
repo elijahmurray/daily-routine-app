@@ -14,12 +14,19 @@ Feature Description: Connections
 - List ppl you met with last week for follow-ups 
 
 Routine Log
-- add flash messages 
--Add view for routine response
+- Add flash messages 
 
-To Do
-- Add validation feedback on save or fail to save.
-- Add inline validation.
+To Do List
+- Brain dump items
+- Delegatable?
+- Specific?
+- associated with given time period (week, day, month)
+- Completed?
+- Recurring? (Goes into routines?)
+- How long to do
+- Start pomodoro timer
+- Is it related to goals, stress, important?
+- Force rank 5 of the above
 
 Test Coverage Needed
 - Routines/models

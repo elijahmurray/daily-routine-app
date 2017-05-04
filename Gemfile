@@ -17,6 +17,7 @@ end
 group :development do
   gem 'guard-livereload'
   gem 'guard-rspec'
+  gem 'capybara'
   gem 'test-unit'
 end
 

@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :to_dos
+
   resources :connections do
     resources :meetings
   end
