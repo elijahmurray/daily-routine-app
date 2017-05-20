@@ -1,4 +1,6 @@
 class ConnectionsController < ApplicationController
+  before_action :authenticate_user!
+
   def new
     @connection = Connection.new
   end
